@@ -1,0 +1,13 @@
+server:
+  port: ${REGISTRY_SERVICE_PORT}
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+      waitTimeInMsWhenSyncEmpty: 0
+
+logging:
+  level:
+    org.springframework: INFO
