@@ -13,10 +13,10 @@ env:
     - COMMIT=${TRAVIS_COMMIT::8}
 
 after_success:
-# TAG
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
   - export REGISTRY=proshik/registry-server
 
+# REGISTRY
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker build -t $REGISTRY:$COMMIT .
   - docker tag $REGISTRY:$COMMIT $REGISTRY:$TAG
