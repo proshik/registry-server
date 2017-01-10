@@ -24,7 +24,7 @@ after_success:
 
 # REGISTRY
   - export REGISTRY=proshik/registry-server
-  - docker build -t REGISTRY:$COMMIT
+  - docker build -t REGISTRY:$COMMIT .
   - docker tag REGISTRY:$COMMIT REGISTRY:$TAG
   - docker push REGISTRY
 
